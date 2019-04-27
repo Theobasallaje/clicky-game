@@ -26,12 +26,14 @@ class App extends Component {
     clicked: []
   }
 
-  handleClick = (image, clicked) => {
+  handleClick = (image) => {
     console.log(`You Clicked ${image}`);
-    this.setState({
-      clicked: [...this.state.clicked, image]
-    })
-    console.log(`Clicked Array: ${clicked}`);
+    // this.setState({
+    //   clicked: [...this.state.clicked, image]
+    // }, () => console.log(`Clicked Array: ${this.state.clicked}`))
+    this.setState(prevState => ({
+      clicked: { ...prevState, clicked: [...this.state.clicked, image] }
+    }), () => console.log(`Clicked Array: ${this.state.clicked}`))
     //if current image we click is in clicked array = true
     //reset score to 0 and shuffle array and reset game
     //else
