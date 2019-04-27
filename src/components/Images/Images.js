@@ -4,7 +4,14 @@ import './index.css'
 const Images = (props) => {
     return (
         <div className="images">
-        Images
+            {props.imageArray.map(image => (
+                <img clicked={false} key={image} onClick={() => {
+                    props.handleClick(image)
+                }}
+                    src={image} />
+            )
+            )
+            }
         </div>
     )
 }
