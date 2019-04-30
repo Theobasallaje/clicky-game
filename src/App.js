@@ -7,6 +7,7 @@ class App extends Component {
   state={
     score: 0,
     topScore: 0,
+    guess: '',
     // Random images array
     // imageArray: ["https://picsum.photos/id/237/170/170","https://picsum.photos/id/238/170/170","https://picsum.photos/id/239/170/170","https://picsum.photos/id/240/170/170","https://picsum.photos/id/241/170/170","https://picsum.photos/id/242/170/170","https://picsum.photos/id/243/170/170","https://picsum.photos/id/244/170/170","https://picsum.photos/id/245/170/170","https://picsum.photos/id/246/170/170","https://picsum.photos/id/247/170/170","https://picsum.photos/id/248/170/170"],
     
@@ -28,18 +29,47 @@ class App extends Component {
 
   handleClick = (image) => {
     console.log(`You Clicked ${image}`);
+    let currScore = this.state.score;
+    let currTopScore = this.state.topScore;
+    let message = this.state.guess;
     // this.setState({
     //   clicked: [...this.state.clicked, image]
     // }, () => console.log(`Clicked Array: ${this.state.clicked}`))
-    this.setState(prevState => ({
-      clicked: { ...prevState, clicked: [...this.state.clicked, image] }
-    }), () => console.log(`Clicked Array: ${this.state.clicked}`))
+    // this.setState(prevState => ({
+    //   clicked: [...prevState.clicked, image]
+    // }), () => console.log(this.state.clicked))
     //if current image we click is in clicked array = true
     //reset score to 0 and shuffle array and reset game
     //else
     //push into clicked array, update score by 1 and compare with topscore and update if needed, shuffle array
     //can shuffle iamges after if else since we do it either way
     //can make a handleShuffle method if needed
+
+    if (this.state.clicked.includes(image)){
+      if (currTopScore < currScore){
+        currTopScore = currScore;
+        this.setState({topScore: currScore});
+      }
+      this.setState({clicked: []}); 
+      currScore = 0;
+      this.setState({score: 0});
+      this.setState({guess: "Incorrect, Try Again!"});
+    } else {
+      currScore++;
+      console.log(currScore);
+      this.setState({score: currScore});
+      this.setState(prevState => ({
+        clicked: [...prevState.clicked, image]
+      }), () => console.log(this.state.clicked))
+        // if (currTopScore < currScore){
+        //   currTopScore = currScore;
+        //   this.setState({topScore: currTopScore});
+        // }
+        this.setState({guess: "Keep Going!"});
+    }
+    let array = this.state.imageArray;
+    array.sort(() => Math.random() - 0.5);
+    this.setState({imageArray: array});
   }
 
   render() {
@@ -48,6 +78,7 @@ class App extends Component {
         <Nav 
         score={this.state.score}
         topScore={this.state.topScore}
+        message={this.state.guess}
         />
         <Images
           imageArray={this.state.imageArray}

@@ -4,9 +4,9 @@ import './index.css'
 const Nav = (props) => {
     return (
         <>
-        <div className="navbar navbar-expand-lg">
+        <div className="navbar navbar-expand-lg fixed-top">
             <span id="title">Clicky Game</span>
-            <span id="guess"></span>
+            <span id="guess">{props.message}</span>
             {/* <span>Score: {props.score + "," + props.topScore}</span> */}
             <div>
                 <span id="score">Score: {props.score}</span><span id="topScore">Top Score: {props.topScore}</span>
