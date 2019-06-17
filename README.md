@@ -1,3 +1,10 @@
+# Memory game with React. This application required me to break up my application's UI into components, manage component state, and respond to user events.
+
+# Check it out
+https://theobasallaje.github.io/clicky-game/
+
+# Installation Instructions
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
