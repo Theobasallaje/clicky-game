@@ -3,6 +3,9 @@
 # Check it out
 https://theobasallaje.github.io/clicky-game/
 
+# Screenshots
+![Homepage](https://theobasallaje.github.io/portfolio/image/portfolio/clicky_game.jpg)
+
 # Installation Instructions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
