@@ -13,7 +13,7 @@ class App extends Component {
     
     // Had to resize images in css
     imageArray: ["https://media.giphy.com/media/VXJWhaO7afRe/giphy.gif", // Saitama 
-                "https://vignette.wikia.nocookie.net/onepunchman/images/6/69/Genos_profile_anime.png/revision/latest/scale-to-width-down/310?cb=20161002155041", // Genos
+                "https://vignette.wikia.nocookie.net/heroes-unite/images/6/69/Genos_profile_anime.png/revision/latest?cb=20190212214620", // Genos
                 "https://vignette.wikia.nocookie.net/onepunchman/images/3/37/License-lessRiderAnimeAvi.png/revision/latest?cb=20160207195325", // Mumen Rider 
                 "https://i.redd.it/dbngi0djlq521.png", // Speed-o'-Sound Sonic
                 "https://vignette.wikia.nocookie.net/onepunchman/images/8/81/Atomic_Samurai_Avi.png/revision/latest?cb=20151227200044", // Atomic Samurai 
@@ -23,7 +23,7 @@ class App extends Component {
                 "https://vignette.wikia.nocookie.net/onepunchman/images/8/8e/Deep_Sea_King_Anime_Portrait.png/revision/latest?cb=20151124210322", // Deep Sea King 
                 "https://vignette.wikia.nocookie.net/onepunchman/images/d/d5/Drive_Knight.png/revision/latest?cb=20151221135032", // Drive Knight 
                 "http://vignette4.wikia.nocookie.net/onepunchman/images/2/2c/BofoyAnime.png", // Metal Knight
-                "https://medias.spotern.com/spots/w640/68600-1532336916.jpg"], // Tatsumaki (Tornado of Terror)
+                "https://cdn.myanimelist.net/r/360x360/images/characters/16/296299.jpg?s=041837c7f519449583b13096ffb7e0a5"], // Tatsumaki (Tornado of Terror)
     clicked: []
   }
 
